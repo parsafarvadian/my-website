@@ -1,0 +1,217 @@
+body{
+    width: 100vw;
+    height: auto;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    user-select: none;
+}
+
+.chest-normal{
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    cursor: pointer;
+    transition: 100ms;
+}
+.chest-normal:hover{
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    cursor: pointer;
+    filter: brightness(0.9);
+    transition: 100ms;
+}
+.chest-clicked{
+    position: absolute;
+    width: 45vh;
+    height: 45vh;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.left_div{
+    width: 50vh;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-left: rgb(0, 0, 0) 0.75vh solid;
+}
+.right_div{
+    width: 50vh;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    border-right: rgb(0, 0, 0) 0.75vh solid;
+    border-left: rgb(199, 199, 199) 0.5vh solid;
+    overflow-y: scroll
+}
+
+.health_container{
+    position: absolute;
+}
+
+.health_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    margin-top: 35vh;
+}
+
+.coin_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+    margin-bottom: 92vh;
+    margin-right: 7vh;
+    width: 40vh;
+}
+
+#health{
+    font-family: cursive;
+    font-size: 4vh;
+    margin-right: 2vh;
+}
+
+#gold{
+    font-family: cursive;
+    font-size: 3.5vh;
+    margin-right: 2vh;
+}
+
+#reward{
+    font-family: cursive;
+    font-size: 3.5vh;
+    margin-bottom: 35vh;
+    transition: 250ms;
+}
+
+.item_container{
+    width: 95%;
+    height: auto;
+    background-color: rgb(233, 233, 233);
+    border-radius: 1vh;
+    margin-top: 2vh;
+}
+
+.item_header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 6vh;
+}
+
+.item_icon{
+    height: 5vh;
+    width: 5vh;
+    margin-left: 0.25vh;
+}
+
+.item_title{
+    font-family: cursive;
+    font-size: 2.5vh;
+}
+
+.item_dropdown{
+    font-family: cursive;
+    font-size: 4vh;
+    margin-right: 2.5vh;
+    margin-top: 3vh;
+    cursor: pointer;
+}
+
+.item_body_open{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-left: 2vh;
+}
+
+.item_body_closed{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    display: none;
+}
+
+.item_description{
+    font-family: cursive;
+    font-size: 2vh;
+}
+
+.item_buy{
+    font-family: cursive;
+    font-size: 2vh;
+    outline: 0;
+    border: 0;
+    margin-bottom: 2vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    transition: 100ms;
+}
+
+.item_buy:hover{
+    font-family: cursive;
+    font-size: 2vh;
+    outline: 0;
+    border: 0;
+    margin-bottom: 2vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    background-color: rgb(28, 141, 98);
+    cursor: pointer;
+    color: white;
+    transition: 100ms;
+}
+
+#hps{
+    position: absolute;
+    font-family: cursive;
+    font-size: 2vh;
+    margin-top: 46vh;
+}
+
+#objective{
+    position: absolute;
+    font-family: cursive;
+    font-size: 2.5vh;
+    margin-top: 88vh;
+    text-align: center;
+}
