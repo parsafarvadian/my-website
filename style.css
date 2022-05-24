@@ -187,6 +187,38 @@ body{
     transition: 100ms;
 }
 
+.item_buy_minimized{
+    font-family: cursive;
+    font-size: 1.5vh;
+    outline: 0;
+    border: 0;
+    margin-top: 0.2vh;
+    padding: 0.5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    border-radius: 1vh;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    transition: 100ms;
+}
+
+.item_buy_minimized:hover{
+    font-family: cursive;
+    font-size: 1.5vh;
+    outline: 0;
+    border: 0;
+    margin-top: 0.2vh;
+    padding: 0.5vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    border-radius: 1vh;
+    background-color: rgb(28, 141, 98);
+    cursor: pointer;
+    color: white;
+    transition: 100ms;
+}
+
 .item_buy:hover{
     font-family: cursive;
     font-size: 2vh;

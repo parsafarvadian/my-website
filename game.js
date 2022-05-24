@@ -17,11 +17,13 @@ setInterval(() => {
         if(items[i].id=="item_hammer")
         {
             items[i].children[0].children[1].innerHTML = "hammer (" + itemHammer + ")"
+            items[i].children[0].children[2].innerHTML = "buy for $" + Math.floor((100 + (itemHammer*(itemHammer/1.2))*120)*10)/10
             items[i].children[1].children[1].innerHTML = "buy for $" + Math.floor((100 + (itemHammer*(itemHammer/1.2))*120)*10)/10
         }
         if(items[i].id=="item_luck")
         {
             items[i].children[0].children[1].innerHTML = "luck (" + itemLuck + ")"
+            items[i].children[0].children[2].innerHTML = "buy for $" + Math.floor((250 + (itemLuck*(itemLuck*1.5))*300)*10)/10
             items[i].children[1].children[1].innerHTML = "buy for $" + Math.floor((250 + (itemLuck*(itemLuck*1.5))*300)*10)/10
             if(itemHammer>=2)
             {
@@ -118,12 +120,16 @@ document.getElementById("chest").onclick = function(){
 
 let dropdowns = document.getElementsByClassName("item_dropdown")
 for (let i = 0; i < dropdowns.length; i++) {
+    let targetElement = dropdowns[i].parentElement.parentElement.children[1]
+    targetElement.parentElement.children[0].children[2].style.display = "none"
     dropdowns[i].onclick = function(){
         let targetElement = dropdowns[i].parentElement.parentElement.children[1]
         if(targetElement.className == "item_body_open")
         {
+            targetElement.parentElement.children[0].children[2].style.display = "inline"
             targetElement.className = "item_body_closed"
         }else{
+            targetElement.parentElement.children[0].children[2].style.display = "none"
             targetElement.className = "item_body_open"
         }
     }
@@ -133,7 +139,21 @@ let buybuttons = document.getElementsByClassName("item_buy")
 for (let i = 0; i < buybuttons.length; i++) {
     buybuttons[i].onclick = function(){
         let targetElement = buybuttons[i].parentElement.parentElement
-        if(targetElement.id == "item_hammer")
+        buyItem(targetElement,i,false)
+    }
+}
+
+let buybuttonsminimized = document.getElementsByClassName("item_buy_minimized")
+for (let i = 0; i < buybuttonsminimized.length; i++) {
+    buybuttonsminimized[i].onclick = function(){
+        let targetElement = buybuttonsminimized[i].parentElement.parentElement
+        buyItem(targetElement,i,true)
+    }
+}
+
+function buyItem(targetElement,i,minimized)
+{
+    if(targetElement.id == "item_hammer")
         {
             if(gold>=(100 + (itemHammer*(itemHammer/1.2))*120))
             {
@@ -142,10 +162,18 @@ for (let i = 0; i < buybuttons.length; i++) {
                 var audio = new Audio('assets/buy.mp3');
                 audio.play();
             }else{
-                buybuttons[i].setAttribute("style","cursor: not-allowed;")
-                setTimeout(() => {
-                    buybuttons[i].setAttribute("style","cursor: pointer;")
-                }, 500);
+                if(minimized==false)
+                {
+                    buybuttons[i].setAttribute("style","cursor: not-allowed;")
+                    setTimeout(() => {
+                        buybuttons[i].setAttribute("style","cursor: pointer;")
+                    }, 500);
+                }else{
+                    buybuttonsminimized[i].setAttribute("style","cursor: not-allowed;")
+                    setTimeout(() => {
+                        buybuttonsminimized[i].setAttribute("style","cursor: pointer;")
+                    }, 500);
+                }
             }
         }
         if(targetElement.id == "item_luck")
@@ -157,13 +185,20 @@ for (let i = 0; i < buybuttons.length; i++) {
                 var audio = new Audio('assets/buy.mp3');
                 audio.play();
             }else{
-                buybuttons[i].setAttribute("style","cursor: not-allowed;")
-                setTimeout(() => {
-                    buybuttons[i].setAttribute("style","cursor: pointer;")
-                }, 500);
+                if(minimized==false)
+                {
+                    buybuttons[i].setAttribute("style","cursor: not-allowed;")
+                    setTimeout(() => {
+                        buybuttons[i].setAttribute("style","cursor: pointer;")
+                    }, 500);
+                }else{
+                    buybuttonsminimized[i].setAttribute("style","cursor: not-allowed;")
+                    setTimeout(() => {
+                        buybuttonsminimized[i].setAttribute("style","cursor: pointer;")
+                    }, 500);
+                }
             }
         }
-    }
 }
 
 document.onkeydown = function(e){
