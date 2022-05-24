@@ -44,8 +44,12 @@ setInterval(() => {
 }, 50);
 
 setInterval(() => {
+    let oldHealth = chestHealth
     chestHealth-=(itemHammer*1)/10
-    checkChest(false)
+    if(Math.abs(oldHealth-chestHealth)>0.01)
+    {
+        checkChest(false)
+    }
 }, 100);
 
 let cooldown = false
